@@ -54,12 +54,14 @@ export default function Edit( { clientId, attributes, setAttributes } ) {
 					<span className="next">›</span>
 				</div>
 			) }
-			<div className="slider-grid">
-				<InnerBlocks
-					template={ TEMPLATE }
-					allowedBlocks={ [ 'task-2025/slide-item' ] }
-					renderAppender={ InnerBlocks.ButtonBlockAppender }
-				/>
+			<div className="slider">
+				<div className="slider-grid">
+					<InnerBlocks
+						template={ TEMPLATE }
+						allowedBlocks={ [ 'task-2025/slide-item' ] }
+						renderAppender={ InnerBlocks.ButtonBlockAppender }
+					/>
+				</div>
 			</div>
 		</div>
 	);

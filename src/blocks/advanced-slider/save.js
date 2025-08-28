@@ -26,8 +26,10 @@ export default function save( { attributes } ) {
 					<span className="next">›</span>
 				</div>
 			) }
-			<div className="slider-grid">
-				<InnerBlocks.Content />
+			<div className="slider">
+				<div className="slider-grid">
+					<InnerBlocks.Content />
+				</div>
 			</div>
 		</div>
 	);
