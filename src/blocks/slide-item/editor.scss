@@ -1,0 +1,23 @@
+.slide-item{
+
+    .slide-image-container {
+        position: relative;
+
+        &.has-image {
+
+            .slide-upload-button {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+        }
+
+        &:hover {
+            .slide-upload-button {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "task-2025/advanced-slider",
+	"version": "0.1.0",
+	"title": "Advanced Slider",
+	"category": "widgets",
+	"icon": "grid-view",
+	"description": "Two-row grid slider",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "task-2025",
+	"editorScript": "file:./index.js",
+	"style": "file:./style.scss",
+	"editorStyle": "file:./editor.scss",
+	"attributes": {
+		"showArrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"slideCount": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"usesContext": [ "postId" ]
+}
