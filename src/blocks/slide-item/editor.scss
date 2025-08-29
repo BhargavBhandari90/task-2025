@@ -13,12 +13,13 @@
                 left: 0;
             }
 
-        }
+            &:hover {
 
-        &:hover {
-            .slide-upload-button {
-                display: block;
+                .slide-upload-button {
+                    display: block;
+                }
             }
+
         }
     }
 }

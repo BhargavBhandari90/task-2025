@@ -27,15 +27,11 @@
       display: grid;
       grid-template-rows: repeat(2, auto);
       grid-auto-flow: column;
-      grid-auto-columns: calc(100% / #{vars.$slider-max-columns});
+      // grid-auto-columns: calc(100% / #{vars.$slider-max-columns});
       gap: vars.$slider-gap;
       scroll-snap-align: start;
-      // overflow-x: auto;
-      // overscroll-behavior-x: contain;
-      // -webkit-overflow-scrolling: touch;
-      // scrollbar-width: thin; // Firefox
 
-      > .slide-item {
+      .slide-item {
         grid-row: 2;
         background: #fff;
         border: 1px solid rgba(0, 0, 0, 0.08);
@@ -45,12 +41,14 @@
         grid-template-rows: auto auto 1fr;
         gap: 8px;
         scroll-snap-align: start;
+        min-width: vars.$slider-min-item-width;
 
-        &:nth-child(1) { grid-column: 1; grid-row: 1; }
-        &:nth-child(2) { grid-column: 2; grid-row: 1; }
-        &:nth-child(3) { grid-column: 3; grid-row: 1; }
-        &:nth-child(4) { grid-column: 4; grid-row: 1; }
-        &:nth-child(5) { grid-column: 5; grid-row: 1; }
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            grid-column: #{$i};
+            grid-row: 1;
+          }
+        }
 
         .slide-icon {
           width: 40px;
@@ -80,7 +78,6 @@
       }
     }
 
-    // Optional: hide nav if <= 5 items
     &:not(.has-more-than-5) .slider-nav {
       display: none;
     }

@@ -104,8 +104,6 @@ if ( ! function_exists( 'task_2025_enqueue_block_editor_assets' ) ) :
 endif;
 add_action( 'enqueue_block_editor_assets', 'task_2025_enqueue_block_editor_assets' );
 
-// Using dist assets; block registration handled in JS bundle.
-
 // Registers custom block styles.
 if ( ! function_exists( 'task_2025_block_styles' ) ) :
 	/**
