@@ -32,10 +32,16 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		const sliderWidth = slider.getBoundingClientRect().width;
 		slideWidth = slides[ 0 ].getBoundingClientRect().width;
 		slidesPerView = Math.floor( sliderWidth / slideWidth );
-		let newSlides =
-			slides.length > slidesPerRow * 2
-				? slides.length - slidesPerRow
-				: slides.length;
+		let newSlides = 0;
+
+		if ( slides.length > slidesPerRow ) {
+			newSlides =
+				slides.length < slidesPerRow * 2
+					? slidesPerRow
+					: slides.length - slidesPerRow;
+		}
+
+		console.log( 'newSlides', newSlides );
 
 		// Ensure we have at least 1 slide per view
 		slidesPerView = Math.max( 1, slidesPerView );
@@ -76,8 +82,14 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			return;
 		}
 
-		if ( e.key === 'ArrowLeft' ) { e.preventDefault(); slidePrev(); }
-		if ( e.key === 'ArrowRight' ) { e.preventDefault(); slideNext(); }
+		if ( e.key === 'ArrowLeft' ) {
+			e.preventDefault();
+			slidePrev();
+		}
+		if ( e.key === 'ArrowRight' ) {
+			e.preventDefault();
+			slideNext();
+		}
 	}
 
 	// Slide to the previous set of slides
