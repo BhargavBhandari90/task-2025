@@ -30,8 +30,8 @@
         {
             "step": "importWxr",
             "file": {
-                "resource": "bundled",
-                "path": "/content/sample-content.wxr"
+                "resource": "url",
+                "url": "https://raw.githubusercontent.com/BhargavBhandari90/task-2025/refs/heads/main/_playground/data.xml"
             }
         }
     ]
