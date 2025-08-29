@@ -7,15 +7,7 @@
     },
     "steps": [
         {
-            "step": "setSiteOptions",
-            "options": {
-                "blogname": "Slider Demo",
-                "blogdescription": "Test for Slider Demo."
-            }
-        },
-        {
-            "step": "login",
-            "username": "admin"
+            "step": "login"
         },
         {
             "step": "installTheme",
@@ -27,12 +19,17 @@
                 "activate": true
             }
         },
-        {
-            "step": "importWxr",
-            "file": {
-                "resource": "url",
-                "url": "https://raw.githubusercontent.com/BhargavBhandari90/task-2025/refs/heads/main/_playground/data.xml"
-            }
-        }
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/channels4_profile.jpg",
+			"data": {
+				"resource": "url",
+				"url": "https://bhargavb.com/wp-content/uploads/2025/05/channels4_profile.jpg"
+			}
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp media import wordpress/wp-content/channels4_profile.jpg--title='Sample'"
+		}
     ]
 }
