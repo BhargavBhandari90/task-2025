@@ -1,6 +1,6 @@
 <?php
 /**
- * task-2025 theme functions and definitions.
+ * Task-2025 theme functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -10,47 +10,47 @@
  */
 
 // Adds theme support for post formats.
-if ( ! function_exists( 'twentytwentyfive_post_format_setup' ) ) :
+if ( ! function_exists( 'task_2025_post_format_setup' ) ) :
 	/**
 	 * Adds theme support for post formats.
 	 *
-	 * @since Twenty Twenty-Five 1.0
+	 * @since Task-2025 1.0
 	 *
 	 * @return void
 	 */
-	function twentytwentyfive_post_format_setup() {
+	function task_2025_post_format_setup() {
 		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 	}
 endif;
-add_action( 'after_setup_theme', 'twentytwentyfive_post_format_setup' );
+add_action( 'after_setup_theme', 'task_2025_post_format_setup' );
 
 // Enqueues editor-style.css in the editors.
-if ( ! function_exists( 'twentytwentyfive_editor_style' ) ) :
+if ( ! function_exists( 'task_2025_editor_style' ) ) :
 	/**
 	 * Enqueues editor-style.css in the editors.
 	 *
-	 * @since Twenty Twenty-Five 1.0
+	 * @since Task-2025 1.0
 	 *
 	 * @return void
 	 */
-	function twentytwentyfive_editor_style() {
+	function task_2025_editor_style() {
 		add_editor_style( 'assets/css/editor-style.css' );
 		add_editor_style( 'dist/style.css' );
 		add_editor_style( 'dist/block.css' );
 	}
 endif;
-add_action( 'after_setup_theme', 'twentytwentyfive_editor_style' );
+add_action( 'after_setup_theme', 'task_2025_editor_style' );
 
 // Enqueues style.css on the front.
-if ( ! function_exists( 'twentytwentyfive_enqueue_styles' ) ) :
+if ( ! function_exists( 'task_2025_enqueue_styles' ) ) :
 	/**
 	 * Enqueues style.css on the front.
 	 *
-	 * @since Twenty Twenty-Five 1.0
+	 * @since Task-2025 1.0
 	 *
 	 * @return void
 	 */
-	function twentytwentyfive_enqueue_styles() {
+	function task_2025_enqueue_styles() {
 		// Prefer built CSS from dist if available; otherwise, fallback to style.css.
 		$dist_style_path = get_stylesheet_directory() . '/dist/style.css';
 		$dist_style_uri  = get_stylesheet_directory_uri() . '/dist/style.css';
@@ -62,7 +62,7 @@ if ( ! function_exists( 'twentytwentyfive_enqueue_styles' ) ) :
 		}
 	}
 endif;
-add_action( 'wp_enqueue_scripts', 'twentytwentyfive_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'task_2025_enqueue_styles' );
 
 // Add editor styles support for the theme.
 if ( ! function_exists( 'task_2025_setup' ) ) :
@@ -107,7 +107,7 @@ add_action( 'enqueue_block_editor_assets', 'task_2025_enqueue_block_editor_asset
 // Using dist assets; block registration handled in JS bundle.
 
 // Registers custom block styles.
-if ( ! function_exists( 'twentytwentyfive_block_styles' ) ) :
+if ( ! function_exists( 'task_2025_block_styles' ) ) :
 	/**
 	 * Registers custom block styles.
 	 *
@@ -115,7 +115,7 @@ if ( ! function_exists( 'twentytwentyfive_block_styles' ) ) :
 	 *
 	 * @return void
 	 */
-	function twentytwentyfive_block_styles() {
+	function task_2025_block_styles() {
 		register_block_style(
 			'core/list',
 			array(
@@ -133,69 +133,69 @@ if ( ! function_exists( 'twentytwentyfive_block_styles' ) ) :
 		);
 	}
 endif;
-add_action( 'init', 'twentytwentyfive_block_styles' );
+add_action( 'init', 'task_2025_block_styles' );
 
 // Registers pattern categories.
-if ( ! function_exists( 'twentytwentyfive_pattern_categories' ) ) :
+if ( ! function_exists( 'task_2025_pattern_categories' ) ) :
 	/**
 	 * Registers pattern categories.
 	 *
-	 * @since Twenty Twenty-Five 1.0
+	 * @since Task-2025 1.0
 	 *
 	 * @return void
 	 */
-	function twentytwentyfive_pattern_categories() {
+	function task_2025_pattern_categories() {
 
 		register_block_pattern_category(
-			'twentytwentyfive_page',
+			'task_2025_page',
 			array(
-				'label'       => __( 'Pages', 'twentytwentyfive' ),
-				'description' => __( 'A collection of full page layouts.', 'twentytwentyfive' ),
+				'label'       => __( 'Pages', 'task-2025' ),
+				'description' => __( 'A collection of full page layouts.', 'task-2025' ),
 			)
 		);
 
 		register_block_pattern_category(
-			'twentytwentyfive_post-format',
+			'task_2025_post-format',
 			array(
-				'label'       => __( 'Post formats', 'twentytwentyfive' ),
-				'description' => __( 'A collection of post format patterns.', 'twentytwentyfive' ),
+				'label'       => __( 'Post formats', 'task-2025' ),
+				'description' => __( 'A collection of post format patterns.', 'task-2025' ),
 			)
 		);
 	}
 endif;
-add_action( 'init', 'twentytwentyfive_pattern_categories' );
+add_action( 'init', 'task_2025_pattern_categories' );
 
 // Registers block binding sources.
-if ( ! function_exists( 'twentytwentyfive_register_block_bindings' ) ) :
+if ( ! function_exists( 'task_2025_register_block_bindings' ) ) :
 	/**
 	 * Registers the post format block binding source.
 	 *
-	 * @since Twenty Twenty-Five 1.0
+	 * @since Task-2025 1.0
 	 *
 	 * @return void
 	 */
-	function twentytwentyfive_register_block_bindings() {
+	function task_2025_register_block_bindings() {
 		register_block_bindings_source(
-			'twentytwentyfive/format',
+			'task-2025/format',
 			array(
-				'label'              => _x( 'Post format name', 'Label for the block binding placeholder in the editor', 'twentytwentyfive' ),
-				'get_value_callback' => 'twentytwentyfive_format_binding',
+				'label'              => _x( 'Post format name', 'Label for the block binding placeholder in the editor', 'task-2025' ),
+				'get_value_callback' => 'task_2025_format_binding',
 			)
 		);
 	}
 endif;
-add_action( 'init', 'twentytwentyfive_register_block_bindings' );
+add_action( 'init', 'task_2025_register_block_bindings' );
 
 // Registers block binding callback function for the post format name.
-if ( ! function_exists( 'twentytwentyfive_format_binding' ) ) :
+if ( ! function_exists( 'task_2025_format_binding' ) ) :
 	/**
 	 * Callback function for the post format name block binding source.
 	 *
-	 * @since Twenty Twenty-Five 1.0
+	 * @since Task-2025 1.0
 	 *
 	 * @return string|void Post format name, or nothing if the format is 'standard'.
 	 */
-	function twentytwentyfive_format_binding() {
+	function task_2025_format_binding() {
 		$post_format_slug = get_post_format();
 
 		if ( $post_format_slug && 'standard' !== $post_format_slug ) {

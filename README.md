@@ -1,4 +1,4 @@
-# task-2025 Theme
+# Task 2025 Theme
 
 Custom WordPress theme based on Twenty Twenty-Five with an advanced slider block and a modern build pipeline (Webpack, Babel, Sass, PostCSS).
 
