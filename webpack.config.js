@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -7,6 +8,8 @@ module.exports = {
   entry: {
     block: path.resolve(__dirname, 'src/js/block.js'),
     style: path.resolve(__dirname, 'src/scss/style.scss'),
+    'advanced-slider-view': path.resolve(__dirname, 'src/blocks/advanced-slider/view.js'),
+    'slide-item-view': path.resolve(__dirname, 'src/blocks/slide-item/view.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -45,9 +48,18 @@ module.exports = {
       },
     ],
   },
-  plugins: [ new MiniCssExtractPlugin({ filename: '[name].css' }) ],
+  plugins: [
+    new MiniCssExtractPlugin({ filename: '[name].css' }),
+    new CopyPlugin({
+      patterns: [
+        {
+          context: 'src/blocks',
+          from: '**/block.json',
+          to: 'blocks/[path]/[name][ext]',
+        },
+      ],
+    }),
+  ],
   devtool: isDev ? 'source-map' : false,
   mode: isDev ? 'development' : 'production',
 };
-
- 

@@ -133,6 +133,20 @@ if ( ! function_exists( 'task_2025_block_styles' ) ) :
 endif;
 add_action( 'init', 'task_2025_block_styles' );
 
+// Registers block types.
+if ( ! function_exists( 'task_2025_register_blocks' ) ) :
+	/**
+	 * Registers the block types.
+	 *
+	 * @since task-2025 1.0
+	 */
+	function task_2025_register_blocks() {
+		register_block_type( get_theme_file_path( 'dist/blocks/advanced-slider' ) );
+		register_block_type( get_theme_file_path( 'dist/blocks/slide-item' ) );
+	}
+endif;
+add_action( 'init', 'task_2025_register_blocks' );
+
 // Registers pattern categories.
 if ( ! function_exists( 'task_2025_pattern_categories' ) ) :
 	/**

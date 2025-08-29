@@ -30,10 +30,12 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 import { useSelect } from '@wordpress/data';
+import { Button } from '@wordpress/components';
+import { arrowLeft, arrowRight } from '@wordpress/icons';
 
 const TEMPLATE = [[ 'task-2025/slide-item' ]];
 
-export default function Edit( { clientId, attributes, setAttributes } ) {
+export default function Edit( { attributes, setAttributes, clientId } ) {
 	const blockProps = useBlockProps( { className: 'slider-wrapper' } );
 
 	const childCount = useSelect( ( select ) => {
@@ -50,8 +52,8 @@ export default function Edit( { clientId, attributes, setAttributes } ) {
 		<div { ...blockProps }>
 			{ attributes.showArrows && childCount > 5 && (
 				<div className="slider-nav" aria-hidden="true">
-					<span className="prev">‹</span>
-					<span className="next">›</span>
+					<Button className="prev slider-btn" variant="tertiary" icon={ arrowLeft }></Button>
+					<Button className="next slider-btn" variant="tertiary" icon={ arrowRight }></Button>
 				</div>
 			) }
 			<div className="slider">

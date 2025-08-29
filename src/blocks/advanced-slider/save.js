@@ -5,6 +5,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { Icon, arrowLeft, arrowRight } from '@wordpress/icons';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -22,8 +23,8 @@ export default function save( { attributes } ) {
 		<div { ...useBlockProps.save( { className: 'slider-wrapper' } ) }>
 			{ showNav && (
 				<div className="slider-nav" aria-hidden="true">
-					<span className="prev">‹</span>
-					<span className="next">›</span>
+					<button className="prev slider-btn"><Icon icon={ arrowLeft } /></button>
+					<button className="next slider-btn"><Icon icon={ arrowRight } /></button>
 				</div>
 			) }
 			<div className="slider">

@@ -2,3 +2,9 @@ $slider-max-columns: 5;
 $slider-min-item-width: 300px;
 $slider-gap: 16px;
 $slider-max-first-row: 5;
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 959px
+);
