@@ -32,6 +32,17 @@
         background: rgba(0, 0, 0, 0.1);
         transform: scale(1.05);
       }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.05);
+          transform: none;
+        }
+      }
     }
 
     .slider-counter {

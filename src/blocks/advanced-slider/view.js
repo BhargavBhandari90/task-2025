@@ -56,6 +56,28 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			updateSlidesPerView();
 			updateSliderPosition();
 		} );
+
+		// Handle keyboard navigation
+		document.addEventListener( 'keydown', handleKeydown );
+	}
+
+	function handleKeydown( e ) {
+		// Do not interfere with text input fields.
+		if ( e.target.matches( 'input, textarea, select' ) ) {
+			return;
+		}
+
+		// Check if the slider is in the viewport before acting on keydown.
+		const sliderRect = slider.getBoundingClientRect();
+		const isSliderInView =
+			sliderRect.top < window.innerHeight && sliderRect.bottom > 0;
+
+		if ( ! isSliderInView ) {
+			return;
+		}
+
+		if ( e.key === 'ArrowLeft' ) { e.preventDefault(); slidePrev(); }
+		if ( e.key === 'ArrowRight' ) { e.preventDefault(); slideNext(); }
 	}
 
 	// Slide to the previous set of slides
@@ -94,6 +116,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		if ( counter ) {
 			counter.textContent = `${ currentPosition + 1 } / ${ totalPages }`;
 		}
+
+		// Disable/enable buttons based on position.
+		prevBtn.disabled = currentPosition === 0;
+		nextBtn.disabled = currentPosition >= totalPages - 1;
 	}
 
 	// Initialize the slider.

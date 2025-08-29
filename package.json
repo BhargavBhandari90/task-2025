@@ -10,7 +10,7 @@
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC",
+	"license": "GPL-2.0-or-later",
 	"description": "",
 	"devDependencies": {
 		"@babel/core": "^7.28.3",
