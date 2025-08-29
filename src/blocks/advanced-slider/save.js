@@ -23,8 +23,13 @@ export default function save( { attributes } ) {
 		<div { ...useBlockProps.save( { className: 'slider-wrapper' } ) }>
 			{ showNav && (
 				<div className="slider-nav" aria-hidden="true">
-					<button className="prev slider-btn"><Icon icon={ arrowLeft } /></button>
-					<button className="next slider-btn"><Icon icon={ arrowRight } /></button>
+					<button className="prev slider-btn">
+						<Icon icon={ arrowLeft } />
+					</button>
+					<span className="slider-counter"></span>
+					<button className="next slider-btn">
+						<Icon icon={ arrowRight } />
+					</button>
 				</div>
 			) }
 			<div className="slider">

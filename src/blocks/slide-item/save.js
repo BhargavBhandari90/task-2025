@@ -19,9 +19,15 @@ export default function save( { attributes } ) {
 	const { mediaUrl, title, description } = attributes;
 	return (
 		<div { ...useBlockProps.save( { className: 'slide-item' } ) }>
-			{ mediaUrl && <img className="slide-icon" src={ mediaUrl } alt="" /> }
+			{ mediaUrl && (
+				<img className="slide-icon" src={ mediaUrl } alt="" />
+			) }
 			<RichText.Content tagName="h3" value={ title } />
-			<RichText.Content tagName="div" className="slide-desc" value={ description } />
+			<RichText.Content
+				tagName="div"
+				className="slide-desc"
+				value={ description }
+			/>
 		</div>
 	);
 }

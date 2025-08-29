@@ -10,6 +10,7 @@
   .slider-nav {
     display: flex;
     justify-content: end;
+    align-items: center;
     margin-bottom: $slider-gap;
     gap: $slider-gap;
 
@@ -31,6 +32,14 @@
         background: rgba(0, 0, 0, 0.1);
         transform: scale(1.05);
       }
+    }
+
+    .slider-counter {
+      font-size: 1rem;
+      color: #555;
+      font-weight: 500;
+      min-width: 30px;
+      text-align: center;
     }
   }
 

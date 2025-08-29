@@ -3,7 +3,7 @@
 	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
 	"title": "Pill shaped",
 	"slug": "post-terms-1",
-	"blockTypes": ["core/post-terms"],
+	"blockTypes": [ "core/post-terms" ],
 	"styles": {
 		"elements": {
 			"link": {

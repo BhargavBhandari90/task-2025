@@ -38,13 +38,29 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<div { ...blockProps }>
-				<div className={ `slide-image-container ${ mediaId ? 'has-image' : '' }` }>
-					{ mediaUrl && <img className="slide-icon" src={ mediaUrl } alt="" /> }
+				<div
+					className={ `slide-image-container ${
+						mediaId ? 'has-image' : ''
+					}` }
+				>
+					{ mediaUrl && (
+						<img className="slide-icon" src={ mediaUrl } alt="" />
+					) }
 					<MediaUpload
-						onSelect={ ( media ) => setAttributes( { mediaId: media.id, mediaUrl: media.url } ) }
+						onSelect={ ( media ) =>
+							setAttributes( {
+								mediaId: media.id,
+								mediaUrl: media.url,
+							} )
+						}
 						type="image"
 						render={ ( { open } ) => (
-							<Button className="slide-upload-button" onClick={ open } variant="tertiary" icon={ media }></Button>
+							<Button
+								className="slide-upload-button"
+								onClick={ open }
+								variant="tertiary"
+								icon={ media }
+							></Button>
 						) }
 					/>
 				</div>

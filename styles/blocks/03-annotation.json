@@ -3,7 +3,7 @@
 	"version": 3,
 	"title": "Annotation",
 	"slug": "text-annotation",
-	"blockTypes": ["core/heading", "core/paragraph"],
+	"blockTypes": [ "core/heading", "core/paragraph" ],
 	"styles": {
 		"css": "width: fit-content",
 		"typography": {

@@ -33,16 +33,21 @@ import { useSelect } from '@wordpress/data';
 import { Button } from '@wordpress/components';
 import { arrowLeft, arrowRight } from '@wordpress/icons';
 
-const TEMPLATE = [[ 'task-2025/slide-item' ]];
+const TEMPLATE = [ [ 'task-2025/slide-item' ] ];
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const blockProps = useBlockProps( { className: 'slider-wrapper' } );
 
-	const childCount = useSelect( ( select ) => {
-		const { getBlockOrder } = select( 'core/block-editor' );
-		const order = getBlockOrder( clientId ) || [];
-		return order.length;
-	}, [ clientId ] );
+	const childCount = useSelect(
+		( select ) => {
+			const { getBlockOrder } = select( 'core/block-editor' );
+			const order = getBlockOrder( clientId ) || [];
+			return order.length;
+		},
+		[ clientId ]
+	);
+
+	const slides = childCount > 10 ? childCount - 5 : childCount;
 
 	if ( attributes.slideCount !== childCount ) {
 		setAttributes( { slideCount: childCount } );
@@ -50,10 +55,21 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 	return (
 		<div { ...blockProps }>
-			{ attributes.showArrows && childCount > 5 && (
+			{ attributes.showArrows && childCount > 3 && (
 				<div className="slider-nav" aria-hidden="true">
-					<Button className="prev slider-btn" variant="tertiary" icon={ arrowLeft }></Button>
-					<Button className="next slider-btn" variant="tertiary" icon={ arrowRight }></Button>
+					<Button
+						className="prev slider-btn"
+						variant="tertiary"
+						icon={ arrowLeft }
+					></Button>
+					<span className="slider-counter">
+						1 / { Math.ceil( slides / 3 ) || 1 }
+					</span>
+					<Button
+						className="next slider-btn"
+						variant="tertiary"
+						icon={ arrowRight }
+					></Button>
 				</div>
 			) }
 			<div className="slider">

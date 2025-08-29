@@ -304,7 +304,7 @@
 			},
 			"core/post-title": {
 				"color": {
-					"text":  "var:preset|color|accent-3"
+					"text": "var:preset|color|accent-3"
 				},
 				"elements": {
 					"link": {

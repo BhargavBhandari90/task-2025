@@ -20,6 +20,10 @@
 		"mediaId": { "type": "number" },
 		"mediaUrl": { "type": "string" },
 		"title": { "type": "string" },
-		"description": { "type": "string", "source": "html", "selector": ".slide-desc" }
+		"description": {
+			"type": "string",
+			"source": "html",
+			"selector": ".slide-desc"
+		}
 	}
 }

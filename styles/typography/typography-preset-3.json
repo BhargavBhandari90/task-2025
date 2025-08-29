@@ -105,7 +105,7 @@
 			"letterSpacing": "-0.22px",
 			"lineHeight": "1.5"
 		},
-		"blocks":{
+		"blocks": {
 			"core/code": {
 				"typography": {
 					"letterSpacing": "0px"
