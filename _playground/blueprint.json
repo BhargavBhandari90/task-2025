@@ -21,7 +21,7 @@
         },
 		{
 			"step": "writeFile",
-			"path": "/wordpress/wp-content/channels4_profile.jpg",
+			"path": "./channels4_profile.jpg",
 			"data": {
 				"resource": "url",
 				"url": "https://bhargavb.com/wp-content/uploads/2025/05/channels4_profile.jpg"
